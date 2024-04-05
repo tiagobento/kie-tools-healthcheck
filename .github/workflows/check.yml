@@ -11,6 +11,7 @@ jobs:
       - name: "Run"
         run: |
           curl -fsSL https://bun.sh/install | bash 
+          source /home/runner/.bashrc 
           bun install && bun test
         
 
