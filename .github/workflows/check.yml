@@ -5,13 +5,17 @@ on:
 
 jobs:
   check-usage:
-    name: "Health-check"
+    name: "Healthcheck"
     runs-on: ubuntu-latest
     steps:
-      - name: "Run"
+      - name: "Checkout"
+        uses: actions/checkout@v4
+        
+      - name: "Install bun"
+        uses: oven-sh/setup-bun@v1
+      
+      - name: "Check"
         run: |
-          curl -fsSL https://bun.sh/install | bash 
-          source /home/runner/.bashrc 
           bun install && bun test
         
 
