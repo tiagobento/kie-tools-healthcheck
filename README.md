@@ -1,4 +1,4 @@
-# kie-tools-usage
+# kie-tools-healthcheck
 
 This repo contains tests that will check interactions with the KIE Tools repo, making sure the proposed development workflows are working fine.
 
