@@ -5,11 +5,13 @@ on:
 
 jobs:
   check-usage:
-    name: "Check usage"
+    name: "Health-check"
     runs-on: ubuntu-latest
     steps:
       - name: "Run"
-        run: bun install && bun test
+        run: |
+          curl -fsSL https://bun.sh/install | bash 
+          bun install && bun test
         
 
 
