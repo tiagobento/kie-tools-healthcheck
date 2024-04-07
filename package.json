@@ -1,5 +1,8 @@
 {
   "name": "kie-tools-usage",
+  "scripts": {
+    "test": "rm -rf dist-tests && bun test --timeout 600000"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

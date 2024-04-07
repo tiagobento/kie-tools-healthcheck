@@ -1,7 +1,10 @@
-on: 
-  workflow_dispatch:    
+on:
+  workflow_dispatch:
   schedule:
     - cron: 0 0,12 * * *
+  push:
+    branches:
+      - "main"
 
 jobs:
   check-usage:
@@ -10,14 +13,13 @@ jobs:
     steps:
       - name: "Checkout"
         uses: actions/checkout@v4
-        
+
       - name: "Install bun"
         uses: oven-sh/setup-bun@v1
-      
+
+      - name: Setup KIE Tools env
+        uses: tiagobento/kie-tools/.github/actions/setup-env@turbo
+
       - name: "Check"
         run: |
-          bun install && bun test
-        
-
-
-  
+          bun install && bun run test
