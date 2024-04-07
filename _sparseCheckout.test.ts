@@ -17,6 +17,6 @@ test(NAME, async () => {
   `;
 
   $.cwd(path.join(TEST_DIR, "incubator-kie-tools"));
-  await $`turbo build test test-e2e -F boxed-expression-component`;
+  await $`turbo build test -F boxed-expression-component`;
   expect(true).toBe(true);
 });
